@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   Sheet,
   SheetClose,
@@ -7,13 +7,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { sidebarLinks } from "@/constants";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Footer from "./Footer";
+} from '@/components/ui/sheet';
+import { sidebarLinks } from '@/constants';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Footer from './Footer';
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -30,16 +30,8 @@ const MobileNav = ({ user }: MobileNavProps) => {
           />
         </SheetTrigger>
         <SheetContent side="left" className="border-none bg-white">
-          <Link
-            href="/"
-            className="flex cursor-pointer items-center gap-1 px-4"
-          >
-            <Image
-              src="/icons/logo.svg"
-              width={34}
-              height={34}
-              alt="Horizon Logo"
-            />
+          <Link href="/" className="flex cursor-pointer items-center gap-1 px-4">
+            <Image src="/icons/logo.svg" width={34} height={34} alt="Horizon Logo" />
             <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
               Horizon
             </h1>
@@ -49,15 +41,14 @@ const MobileNav = ({ user }: MobileNavProps) => {
               <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                 {sidebarLinks.map((item) => {
                   const isActive =
-                    pathname === item.route ||
-                    pathname.startsWith(`${item.route}/`);
+                    pathname === item.route || pathname.startsWith(`${item.route}/`);
                   return (
                     <SheetClose asChild key={item.label}>
                       <Link
                         href={item.route}
                         key={item.label}
-                        className={cn("mobilenav-sheet_close w-full", {
-                          "bg-bank-gradient": isActive,
+                        className={cn('mobilenav-sheet_close w-full', {
+                          'bg-bank-gradient': isActive,
                         })}
                       >
                         <Image
@@ -66,12 +57,12 @@ const MobileNav = ({ user }: MobileNavProps) => {
                           width={20}
                           height={20}
                           className={cn({
-                            "brightness-[3] invert-0": isActive,
+                            'brightness-[3] invert-0': isActive,
                           })}
                         />
                         <p
-                          className={cn("text-16 font-semibold text-black-2", {
-                            "text-white": isActive,
+                          className={cn('text-16 font-semibold text-black-2', {
+                            'text-white': isActive,
                           })}
                         >
                           {item.label}

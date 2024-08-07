@@ -1,5 +1,5 @@
-"use client";
-import CountUp from "react-countup";
+'use client';
+import CountUp from 'react-countup';
 
 const AnimatedCounter = ({ amount }: { amount: number }) => {
   return (

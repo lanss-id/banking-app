@@ -1,13 +1,9 @@
-import { formatAmount } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { formatAmount } from '@/lib/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
-const BankCard = ({
-  account,
-  userName,
-  showBalance = true,
-}: CreditCardProps) => {
+const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
   return (
     <div className="flex flex-col">
       <Link href="/" className="bank-card">
@@ -43,7 +39,7 @@ const BankCard = ({
           width={316}
           height={190}
           alt="lines"
-          className="absolute top-0 left-0"
+          className="absolute left-0 top-0"
         />
       </Link>
 
