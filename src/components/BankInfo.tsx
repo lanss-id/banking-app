@@ -1,14 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
+import Image from 'next/image';
+import { useSearchParams, useRouter } from 'next/navigation';
 
-import {
-  cn,
-  formUrlQuery,
-  formatAmount,
-  getAccountTypeColors,
-} from "@/lib/utils";
+import { cn, formUrlQuery, formatAmount, getAccountTypeColors } from '@/lib/utils';
 
 const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
   const router = useRouter();
@@ -19,7 +14,7 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
   const handleBankChange = () => {
     const newUrl = formUrlQuery({
       params: searchParams.toString(),
-      key: "id",
+      key: 'id',
       value: account?.appwriteItemId,
     });
     router.push(newUrl, { scroll: false });
@@ -31,14 +26,12 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
     <div
       onClick={handleBankChange}
       className={cn(`bank-info ${colors.bg}`, {
-        "shadow-sm border-blue-700": type === "card" && isActive,
-        "rounded-xl": type === "card",
-        "hover:shadow-sm cursor-pointer": type === "card",
+        'border-blue-700 shadow-sm': type === 'card' && isActive,
+        'rounded-xl': type === 'card',
+        'cursor-pointer hover:shadow-sm': type === 'card',
       })}
     >
-      <figure
-        className={`flex-center h-fit rounded-full bg-blue-100 ${colors.lightBg}`}
-      >
+      <figure className={`flex-center h-fit rounded-full bg-blue-100 ${colors.lightBg}`}>
         <Image
           src="/icons/connect-bank.svg"
           width={20}
@@ -54,7 +47,7 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
           >
             {account.name}
           </h2>
-          {type === "full" && (
+          {type === 'full' && (
             <p
               className={`text-12 rounded-full px-3 py-1 font-medium text-blue-700 ${colors.subText} ${colors.lightBg}`}
             >
